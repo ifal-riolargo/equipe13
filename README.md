@@ -1,4 +1,5 @@
 # equipe13
 JavaServerFaces 
 
-wheslan silva
+Wheslan Silva
+Josafá Veríssimo Gomes
