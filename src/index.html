@@ -9,68 +9,59 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <style>
-        body{
-            padding: 10px;    
-        }
-        h1 {
-            text-align: center;
-            font-family: 'Lucida Sans';
-        }
-        footer {
-            background-color: #111;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        html{
-            scroll-behavior: smooth;
-        }
-        card{
-            background-color: gray;
-            border: 1px solid black;
-            
-        }
-    </style>
+        <link rel="stylesheet" href="Style.css">
+        
     </head>
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="index.html">Kubbleware</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sobre">Sobre</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <h1>Kubbleware</h1>
         </header>
-
-        <h1>Kubbleware</h1>
-
-        <dl>
-            <dt><h2>O que somos</h2></dt>
-
-            <dd>
-                <p>Somos uma empresa que oferta treinamentos sobre a tecnologia JSF. Com nossos cursos você poderá ter um maior domínio sobre a ferramenta</p>
-            </dd>
-
-            <dt><h2>Treinamentos</h2></dt>
-            <dd>
-                <p>
-                    Os treinamentos são 100% online e com acesso vitalício. Os cursos são separados em básico, médio e avançado, assim você poderá
-                    acompanhar a tecnlogia no seu ritmo e no momento em que você quiser.
-                </p>
-            </dd>
-
-            <dt><h2>Certificados</h2></dt>
-            <dd>Os nossos certificados provam que você está apto a atuar na área de desenvolvimento java utilizando o framework JSF. Para obter o certicado do curso, ele tem que ser concluído 100% e ter feito a prova final do curso.</dd>
-        </dl>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Kubbleware</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cursos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Nivel básico</a>
+                            <a class="dropdown-item" href="#">Nivel Intermédiario</a>
+                            <a class="dropdown-item" href="#">Nivel avançado</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>           
+        </nav>
+       <p>
+            <div class="container-fluid">
+                <dl>
+                    <dt><h2>O que somos</h2></dt>
+                    <dd>
+                        <p>Somos uma empresa que oferta treinamentos sobre a tecnologia JSF. Com nossos cursos você poderá ter um maior domínio sobre a ferramenta</p>
+                    </dd>
+                    
+                    <dt><h2>Treinamentos</h2></dt>
+                    <dd>
+                        <p>
+                            Os treinamentos são 100% online e com acesso vitalício. Os cursos são separados em básico, médio e avançado, assim você poderá
+                            acompanhar a tecnlogia no seu ritmo e no momento em que você quiser.
+                        </p>
+                    </dd>
+    
+                    <dt><h2>Certificados</h2></dt>
+                    <dd>Os nossos certificados provam que você está apto a atuar na área de desenvolvimento java utilizando o framework JSF. Para obter o certicado do curso, ele tem que ser concluído 100% e ter feito a prova final do curso.</dd>
+                </dl>
+            </div>
+        </p>
+        
         
         <!--<h2 style="text-align: center;">
             Noticias
@@ -78,17 +69,25 @@
         <br>
         
         <div class="card">
+            <br>
             <h1 id="sobre">Sobre</h1>
-            <dl>
+            <p>
+               <dl>
                 <h3>O que fazemos</h3>
                 <p>Ofertamos consultoria e treinamento no framework JSF para desenvolvedores ou empresas. Prestamos este serviço desde 2007. Formamos mais de 140.000 profissionais.</p></dd>
     
                 <h3>Realizando o Treinamento</h3>
                 <p>Para fazer um curso é simples, basta cadastrar-se no site escolher um curso e efetuar a compra e pronto! Agora você já pode assistir ao curso.</p></dd>
-            </dl>
+            </dl> 
+            </p>
+            
         </div>
+    
         <footer>
-            <h3>Contato: kubbleware@contato.com</h3>
+            <h4>
+                <b></b>Contato</b><br>
+                kubbleware@contato.com
+            </h4>
             <h3>Brasil, São Paulo</h3>
             <div class="container">
                 <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
