@@ -2,34 +2,119 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>O que somos e Tipos de treinamentos</title>
+        <title>Kubbleware</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="../public/css/style.css">
+        <link rel="stylesheet" href="../public/css/normalize.css">
     </head>
+
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                </ul>
-            </nav>
+            <h1>Kubbleware</h1>
         </header>
 
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a class="navbar-brand" href="index.html">Kubbleware</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cursos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="index.html">Lançamentos</a>
+                            <a class="dropdown-item" href="cursos.html">Lista dos cursos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                </ul>
+            </div>           
+        </nav>
+
+        <div class="container main">
+            <div class="container">
+                <h1 id="nos">Somos a <b>KubbleWare</b></h1>
                 
-        <h1 style="text-align: center">Kubbleware</h1>
+                <div class="row">
+                    <div class="col-8">
+                        <p class="formated-plain-text ">
+                            Prestamos consultoria e treinamento em JavaServer Faces tanto para empresas quanto para programadores há 12 anos.
+                            Neste período, formamos mais de 100 mil profissionais aptos a trabalhar no <i>framework</i>.
+                            Com os nossos colaboradores, tutores, gestores e nossos representates, você terá total apoio em seus
+                            estudos, pois estaremos dispostos a te ajudar, seja desde a uma mera dúvida sobre um determinado curso até em indagações
+                            sobre a implementação de um projeto <b>real</b> seu.
+                        </p>
+                    </div>
+    
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="../public/img/sede.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text formated-plain-text">
+                                    Nossa Sede está localizado em Maceió, Alagoas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                <h1 id="treinamentos">Nossos Treinamentos</h1>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="../public/img/treinamento.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text formated-plain-text">
+                                    Treinamento de JavaServer Faces gratuito em Maceió ofertado pela KubbleWare
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <p class="formated-plain-text">
+                            Para fazer ingressar a um treinamento, basta escolher um que esteja em nossa lista e realizar a sua
+                            inscrição. O valor do curso estará explícito em suas informações. Ao se inscrever e ter pago, caso o curso
+                            não seja gratuito, em um curso online, você receberá um e-mail de confirmação e um link
+                            para a nossa plataforma onde estará o curso em que você se inscreveu, caso o curso seja presencial, será entregue
+                            ao seu endereço de e-mail a localização exata de onde ocorrerá o treinamento e um telefone e e-mail para contato.
+                        </p>
+                        <p class="formated-plain-text">
+                            Se a sua empresa queira um treinamento dentro do espaço da sua organização, basta nos informar a localização e um email ou telefone
+                            para contato.
+                        </p>
+                    </div>
+            
+                </div>
+            </div>
 
-        <dl>
-            <dt><h2>O que fazemos</h2></dt>
-            <dd><p>Ofertamos consultoria e treinamento no framework JSF para desenvolvedores ou empresas. Prestamos este serviço desde 2007. Formamos mais de 140.000 profissionais.</p></dd>
+        </div>
+    
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Contato</h4>
+                        <p>kubbleware@contato.com</p>
+                    </div>
 
-            <dt><h2>Realizando o Treinamento</h2></dt>
-            <dd><p>Para fazer um curso é simples, basta cadastrar-se no site escolher um curso e efetuar a compra e pronto! Agora você já pode assistir ao curso.</p></dd>
-        </dl>
-
-        <footer style="background-color: #111; color: #fff; padding: 20px;">
-            <h3>Contato: kubbleware@contato.com</h3>
-            <h3>Brasil, São Paulo</h3>
-            <h3>Direitos reservados</h3>
+                    <div class="col-6">
+                        Brasil, AL, Maceió
+                        <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
+                    </div>
+                </div>
+            </div>
         </footer>
-
     </body>
 </html>
