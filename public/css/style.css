@@ -1,29 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body{
-    background-color: gainsboro;    
+    background-color: #efefef;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background: #E7DFDD;
 }
 header{
-    font-family: 'Courier New';
     padding: 10px 0px;
+    background: #0E0B16;
+    color: #f1f1f1;
 }
 .navbar{
     position: sticky;
+    background: #4717F9;
+    opacity: .9;    
 }
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar .dropdown-menu {
+    background-color: #4717F9;
+}
+
 h1 {
     text-align: center;
-    font-family: 'Lucida Sans';
 }
 html{
     scroll-behavior: smooth;
 }
 .card{
     background-color: #dfdfdf;
-    /*border: 1px solid black;*/
+    border: 1px solid #555;
+}
+
+.card-free {
+    background-color: #43f333;
+    border: 1px solid #555;
 }
 footer {
     background-color: #111;
     color: #fff;
     padding: 20px;
     text-align: center;
-    font-family: 'Lucida Sans';
     margin-top: 10px;
+}
+
+.main {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 2px 2px 36px 0px #aaa;
 }

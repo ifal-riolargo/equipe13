@@ -12,6 +12,13 @@
         
         <link rel="stylesheet" href="../public/css/style.css">
         <link rel="stylesheet" href="../public/css/normalize.css">
+
+        <style>
+            .formated-plain-text {
+                text-align: justify;
+                text-indent: 20px;
+            }
+        </style>
     </head>
 
     <body>
@@ -19,7 +26,7 @@
             <h1>Kubbleware</h1>
         </header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <a class="navbar-brand" href="index.html">Kubbleware</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,96 +50,156 @@
             </div>           
         </nav>
 
-       <p>
-            <div class="container-fluid">
-                <dl>
-                    <dt><h2>O que somos</h2></dt>
-                    <dd>
-                        <p>Somos uma empresa que oferta treinamentos sobre a tecnologia JSF. Com nossos cursos você poderá ter um maior domínio sobre a ferramenta</p>
-                    </dd>
-                    
-                    <dt><h2>Treinamentos</h2></dt>
-                    <dd>
+        <div class="container main">
+            <div class="container">
+                <h1>Novos conteúdos</h1>
+                <div style="display: inline">
+                    <h1 style="float: left">Novos Treinamentos</h1>
+                </div>
+
+                <div style="display: inline">
+                    <h1 style="float: right">Artigos</h1>
+                </div>
+                
+                <div class="row" style="clear: both">
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="../public/img/jsf.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Treinamento em JSF à nível básico
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="../public/img/jsf.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Treinamento em JSF à nível médio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">JSF na prática</li>
+                            <li class="list-group-item">Conceitos usados em JSF</li>
+                            <li class="list-group-item">JSF, porque usar</li>
+                            <li class="list-group-item">JSF quando usá-lo</li>
+                            <li class="list-group-item">Problemas em JSF</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="../public/img/jsf.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Treinamento em JSF à nível avançado
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card-free">
+                            <img src="../public/img/jsf.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Implementando Interfaces de usuários
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card-free">
+                            <img src="../public/img/jsf.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Entendendo a estrutura do framework JSF
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                <div class="row">
+                    <div class="col-4">
+                        <h1>Quem Somos</h1>
+                        <p>
+                            Somos uma empresa que oferta treinamentos sobre a tecnologia JSF.
+                            Com nossos cursos você poderá ter um maior domínio sobre a ferramenta
+                        </p>
+                    </div>
+
+                    <div class="col-4">
+                        <h1>Treinamentos</h1>
                         <p>
                             Os treinamentos são 100% online e com acesso vitalício. Os cursos são separados em básico, médio e avançado, assim você poderá
                             acompanhar a tecnlogia no seu ritmo e no momento em que você quiser.
                         </p>
-                    </dd>
-    
-                    <dt><h2>Certificados</h2></dt>
-                    <dd>Os nossos certificados provam que você está apto a atuar na área de desenvolvimento java utilizando o framework JSF. Para obter o certicado do curso, ele tem que ser concluído 100% e ter feito a prova final do curso.</dd>
-                </dl>
-            </div>
-        </p>
-
-        
-
-       
-        
-        <div class="container">
-            <h1>Novos conteúdos</h1>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../public/img/jsf.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Treinamento em JSF à nível básico
-                            </p>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../public/img/jsf.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Treinamento em JSF à nível médio
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../public/img/jsf.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Treinamento em JSF à nível avançado
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="jumbotron" style="margin-top: 40px;">
-            <br>
-            <h1 id="sobre">Sobre</h1>
-            <p>
-               <dl>
-                <h3>O que fazemos</h3>
-                <p>Ofertamos consultoria e treinamento no framework JSF para desenvolvedores ou empresas. Prestamos este serviço desde 2007. Formamos mais de 140.000 profissionais.</p></dd>
-    
-                <h3>Realizando o Treinamento</h3>
-                <p>Para fazer um curso é simples, basta cadastrar-se no site escolher um curso e efetuar a compra e pronto! Agora você já pode assistir ao curso.</p></dd>
-            </dl> 
-            </p>
             
+                    <div class="col-4">
+                        <h1>Certificados</h1>
+                        <p>
+                            Os nossos certificados provam que você está apto a atuar na área de desenvolvimento 
+                            java utilizando o framework JSF. Para obter o certicado do curso, ele tem que ser 
+                            concluído 100% e ter feito a prova final do curso.
+                        </p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <h1 id="sobre">Sobre</h1>
+                <div class="row">
+                    <div class="col-6">
+                        <h1>O que fazemos</h1>
+                        <p class="formated-plain-text">
+                            Ofertamos consultoria e treinamento no framework JSF para desenvolvedores ou empresas.
+                            Prestamos este serviço desde 2007. Formamos mais de 140.000 profissionais.
+                        </p>
+
+                        <a href="sobre.html#nos">Conheça-nos melhor</a>
+                    </div>
+
+                    <div class="col-6">
+                        <h1>Realizando o Treinamento</h1>
+                        <p class="formated-plain-text">
+                            Para fazer um curso é simples, basta cadastrar-se no site escolher um curso e efetuar a
+                            compra e pronto! Agora você já pode assistir ao curso.
+                        </p>
+
+                        <a href="sobre.html#treinamentos">Saiba mais dos nossos treinamentos</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     
         <footer>
-            <h4>
-                <b></b>Contato</b><br>
-                kubbleware@contato.com
-            </h4>
-            <h3>Brasil, São Paulo</h3>
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Contato</h4>
+                        <p>kubbleware@contato.com</p>
+                    </div>
+
+                    <div class="col-6">
+                        Brasil, AL, Maceió
+                        <p class="m-0 text-center text-white">Copyright &copy; 2019</p>
+                    </div>
+                </div>
             </div>
         </footer>
-
     </body>
 </html>
