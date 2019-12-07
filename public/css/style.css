@@ -52,3 +52,8 @@ footer {
     padding: 10px;
     box-shadow: 2px 2px 36px 0px #aaa;
 }
+
+.formated-plain-text {
+    text-align: justify;
+    text-indent: 20px;
+}
