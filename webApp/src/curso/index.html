@@ -227,6 +227,14 @@
                     </div>
                 </div>
             </div>
+
+            <script>
+                document.querySelectorAll('.card').forEach(card => {
+                    card.onclick = () => {
+                        window.location = 'editar.html'
+                    }
+                });
+            </script>
         </footer>
     </body>
 </html>
