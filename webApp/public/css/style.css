@@ -57,3 +57,8 @@ footer {
     text-align: justify;
     text-indent: 20px;
 }
+
+.card-coming-soon {
+    background-color: #f36e31;
+    color: #fafafa;
+}
