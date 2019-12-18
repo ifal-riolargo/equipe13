@@ -1,6 +1,6 @@
 package app.information;
 
-public class Information {
+public abstract class Information {
     private String title;
     private String content;
     private String description;
@@ -13,8 +13,7 @@ public class Information {
      * @param description
      * @param bibliography
      */
-    public Information(String title, String content, String description,
-            String[] bibliography) {
+    public Information(String title, String content, String description, String[] bibliography) {
         this.title = title;
         this.content = content;
         this.description = description;

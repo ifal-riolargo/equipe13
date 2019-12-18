@@ -1,16 +1,26 @@
 package app.information;
 
+import app.person.Teacher;
+
 public class Article extends Information {
-    private String abstrakt; // article abstract
+    private String abstrakt = ""; // article abstract
+    private Teacher[] authors;
 
-    // implement relationship 1-*
-    // private Instructor[] authors;
-
+    /**
+     * 
+     * @param title
+     * @param content
+     * @param description
+     * @param bibliography
+     * @param abstrakt
+     * @param authors
+     */
     public Article(String title, String content, String description,
-            String[] bibliography, String abstrakt) {
+            String[] bibliography, String abstrakt, Teacher[] authors) {
         super(title, content, description, bibliography);
 
         this.abstrakt = abstrakt;
+        this.authors = authors;
     }
 
     /**
@@ -21,7 +31,8 @@ public class Article extends Information {
     }
 
     /**
-     * @param abstrakt the abstrakt to set
+     * @param abstrakt
+     *                     the abstrakt to set
      */
     public void setAbstrakt(String abstrakt) {
         this.abstrakt = abstrakt;
