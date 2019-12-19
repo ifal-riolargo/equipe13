@@ -7,8 +7,10 @@ public class Event {
     private String description = "";
     private String startDate = "";
     private String endDate = "";
+    private String startTime = "";
+    private String endTime = "";
     private String address = "";
-    private Teatcher[] speakers;
+    private Teacher[] speakers;
 
     /**
      * 
@@ -16,11 +18,15 @@ public class Event {
      * @param description
      * @param startDate
      * @param endDate
+     * @param startTime
+     * @param endTime
      * @param address
      * @param speakers
      */
+
     public Event(String subject, String description, String startDate,
-            String endDate, String address, Teacher[] speakers) {
+            String endDate, String startTime, String endTime, String address,
+            Teacher[] speakers) {
 
         this.subject = subject;
         this.description = description;
@@ -98,6 +104,36 @@ public class Event {
     }
 
     /**
+     * @return the startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * @param startTime
+     *                      the startTime to set
+     */
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * @return the endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * @param endTime
+     *                    the endTime to set
+     */
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
      * @param address
      *                    the address to set
      */
@@ -108,7 +144,7 @@ public class Event {
     /**
      * @return the speakers
      */
-    public Teatcher[] getSpeakers() {
+    public Teacher[] getSpeakers() {
         return speakers;
     }
 
@@ -116,7 +152,7 @@ public class Event {
      * @param speakers
      *                     the speakers to set
      */
-    public void setSpeakers(Teatcher[] speakers) {
+    public void setSpeakers(Teacher[] speakers) {
         this.speakers = speakers;
     }
 }

@@ -95,7 +95,7 @@ public class Company {
 
 	/**
 	 * 
-	 * @return the courses[]
+	 * @return the courses
 	 */
 	public Course[] getCourses() {
 		return courses;
