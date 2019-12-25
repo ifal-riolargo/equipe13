@@ -1,38 +1,42 @@
 package test;
 
-import app.information.Course;
-
-import app.person.Teacher;
+import app.towatch.Course;
+import app.person.Instructor;
 
 public class CourseTest {
-    public static void main(String[] args) {
-        String[] bibliography = { "teste", "teste2" };
-        Teacher[] professores = new Teacher[2];
-        professores[0] = new Teacher("josafa", "333", "2002-08-02",
-                "asdad@gmail.com", bibliography);
-        professores[1] = new Teacher("Jay", "333", "2002-08-02",
-                "asdad@zxcxzc.com", bibliography);
-        Course course = new Course("Java avançado", "conteudo(video)",
-                "curso topado de top slk", bibliography, 400, 'A',
-                "caminho/do/video.mp4", professores);
+  public static void main(String[] args) {
+    Instructor[] instructors = new Instructor[6];
+    instructors[0] = new Instructor("Josafá Veríssimo", "02-08-2002", "josafa@gmail.com",
+        "doutor em ciências da computação");
+    instructors[1] = new Instructor("Jenrique Joarez", "21-03-1999", "hendoRick@gmail.com", "técnico em redes");
+    instructors[2] = new Instructor("Jenzo Hanzo", "29-10-1985", "enzo@gmail.com", "mestre em sistemas da informção");
+    instructors[3] = new Instructor("HEehehh", "29-10-1985", "enzo@gmail.com", "mestre em ninjutso");
+    instructors[4] = new Instructor("O Cara", "29-10-1985", "enzo@gmail.com", "the information at hands");
+    instructors[5] = new Instructor("Hanzo Hazashi", "19-10-1985", "enzo@gmail.com", "esse eo  cara");
 
-        course.setTitle("Novo titulo do curso");
-        course.setContent("Video novo upado");
-        course.setDescription("Essa descrição fica bem melhor");
-        course.setWorkload(800);
-        course.setLevel('C');
-        course.setFilePath("Essa/caminho/eh/mais/intuitivo");
+    Course myCourse = new Course("curso de java", "jsf do basico ao avançado", "02-01-2020", "02-07-2020", "online",
+        "4002-8922", "email@do.curso");
 
-        System.out.println(course.getTitle());
-        System.out.println(course.getContent());
-        System.out.println(course.getDescription());
-        System.out.println(course.getWorkload());
-        System.out.println(course.getLevel());
-        System.out.println(course.getFilePath());
+    // ok
+    for (Instructor i : instructors)
+      myCourse.addInstructor(i);
 
-        course.listTeachers();
+    // ok
+    // myCourse.showInstructors();
+    // System.out.println("+=====+");
 
-        course.listBiblography();
+    // ok
+    // myCourse.showInstructor("Jasdsdo");
+    // myCourse.showInstructor(2);
 
-    }
+    // myCourse.updateInstructor("Jo", "novoNomeDoRapaiz", "oxe tu eh isso eh");
+    // myCourse.updateInstructor("Jo", "novoNomeDoCara");
+    myCourse.updateInstructor(5, "josephhhhhh", "oxe joasdad");
+    // myCourse.showInstructors();
+
+    // ok
+    myCourse.deleteInstructor("Josafá Veríssimo");
+    myCourse.deleteInstructor(5);
+
+  }
 }

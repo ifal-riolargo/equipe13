@@ -1,206 +1,252 @@
 package app.company;
 
-import app.information.Course;
+// import app.towatch.*
+import app.towatch.Course;
+import app.towatch.Event;
+
+import java.util.Arrays;
 
 public class Company {
-	private String name = "";
-	private String cnpj = "";
-	private String address = "";
-	private String contact = "";
-	private String about = "";
-	private Course[] courses;
+  private String name;
+  private Course[] courses = new Course[0];
+  private Event[] events = new Event[0];
 
-	/**
-	 * 
-	 * @param name
-	 * @param cnpj
-	 * @param address
-	 * @param contact
-	 * @param amountCourses
-	 * @param courses
-	 */
-	public Company(String name, String cnpj, String address, String contact,
-			int amountCourses, Course[] courses, String about) {
-		this.name = name;
-		this.cnpj = cnpj;
-		this.address = address;
-		this.contact = contact;
-		this.courses = courses;
-		this.about = about;
-	}
+  public Company(String name) {
+    this.name = name;
+  }
 
-	/**
-	 * 
-	 * @return the name
-	 */
-	public String getName() {
-		return this.name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	/**
-	 * 
-	 * @return the cnpj
-	 */
-	public String getCnpj() {
-		return cnpj;
-	}
+  private Course[] getCoursesByText(String text) {
+    Course[] courses = new Course[this.courses.length];
+    int found = 0;
 
-	/**
-	 * 
-	 * @param cnpj
-	 */
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
+    if (this.courses.length != 0) {
+      for (Course course : this.courses) {
+        if (course.getName().indexOf(text) != -1 || course.getDescription().indexOf(text) != -1)
+          courses[found++] = course;
+      }
+    }
 
-	/**
-	 * 
-	 * @return the address
-	 */
-	public String getAddress() {
-		return address;
-	}
+    return Arrays.copyOf(courses, found);
+  }
 
-	/**
-	 * 
-	 * @param address
-	 */
-	public void setAddress(String address) {
-		this.address = address;
-	}
+  private Event[] getEventsByText(String text) {
+    Event[] events = new Event[this.events.length];
+    int found = 0;
 
-	/**
-	 * 
-	 * @return the contact
-	 */
-	public String getContact() {
-		return contact;
-	}
+    if (this.events.length != 0) {
+      for (Event event : this.events) {
+        if (event.getName().indexOf(text) != -1 || event.getDescription().indexOf(text) != -1)
+          events[found++] = event;
+      }
+    }
 
-	/**
-	 * 
-	 * @param contact
-	 */
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
+    return Arrays.copyOf(events, found);
+  }
+  // CRUD -- Courses
 
-	/**
-	 * 
-	 * @return the courses
-	 */
-	public Course[] getCourses() {
-		return courses;
-	}
+  // Create
+  public void addCourse(Course course) {
+    final int LENGTH = this.courses.length + 1;
 
-	/**
-	 * 
-	 * @param courses
-	 */
-	public void setCourses(Course[] courses) {
-		this.courses = courses;
-	}
+    this.courses = Arrays.copyOf(this.courses, LENGTH);
+    this.courses[LENGTH - 1] = course;
+  }
 
-	/**
-	 * 
-	 * @return the about
-	 */
-	public String getAbout() {
-		return this.about;
-	}
+  public boolean updateCourse(String text, String newName, String newDescription, String newStartDate,
+      String newEndDate, String newAddress, String newPhone, String newEmail) {
+    if (this.courses.length == 0) {
+      System.out.println("Não há eventos cadastrados.");
 
-	/**
-	 * 
-	 * @param about
-	 */
-	public void setAbout(String about) {
-		this.about = about;
-	}
+      return false;
+    } else {
+      Course[] course = this.getCoursesByText(text);
+      if (course.length == 0) {
+        System.out.println("Nenhum curso foi encontrado.");
 
-	// Courses [C]RUD
+        return false;
+      } else {
+        if (newName != "")
+          course[0].setName(newName);
 
-	/**
-	 * 
-	 * @param text
-	 * @return course or null
-	 */
-	public Course retrieveCourse(String text) {
-		for (Course course : this.courses) {
-			if (course.getTitle().indexOf(text) != -1
-					|| course.getDescription().indexOf(text) != -1)
-				return course;
-		}
+        if (newDescription != "")
+          course[0].setDescription(newDescription);
 
-		return null;
-	}
+        if (newStartDate != "")
+          course[0].setStartDate(newStartDate);
 
-	/**
-	 * 
-	 * @param text
-	 * @param newTitle
-	 * @param newDescription
-	 * @return boolean
-	 */
-	public boolean updateCourse(String text, String newTitle,
-			String newDescription) {
+        if (newEndDate != "")
+          course[0].setEndDate(newEndDate);
 
-		Course course = this.retrieveCourse(text);
-		if (course == null)
-			return false;
+        if (newAddress != "")
+          course[0].setAddress(newAddress);
 
-		int updates = 0;
+        if (newPhone != "")
+          course[0].setPhone(newPhone);
 
-		if (newTitle != "") {
-			course.setTitle(newTitle);
-			updates++;
-		}
+        if (newEmail != "")
+          course[0].setEmail(newEmail);
+      }
 
-		if (newDescription != "") {
-			course.setDescription(newDescription);
-			updates++;
-		}
+      return true;
+    }
+  }
 
-		return updates != 0;
-	}
+  // Retrieve
+  public void showCourse(String text) {
+    if (this.courses.length == 0) {
+      System.out.println("Não há cursos cadastrados.");
+    } else {
+      Course[] courses = this.getCoursesByText(text);
 
-	/**
-	 * 
-	 * @param text
-	 */
-	public void deleteCourse(String text) {
-		for (int i = 0; i < courses.length - 1; i++) {
-			if (courses[i] == null)
-				break;
-			if (courses[i].getTitle() == text
-					|| courses[i].getDescription() == text) {
-				for (int j = i; j < courses.length - 1; j++) {
-					courses[j] = courses[j + 1];
-				}
-			}
-		}
-		courses[courses.length - 1] = null;
-	}
+      if (courses.length == 0) {
+        System.out.println("Nenhum curso encontrado.");
+      } else {
+        for (Course course : courses) {
+          System.out.println(course.getName() + " -- " + course.getDescription());
+        }
+      }
+    }
+  }
 
-	/**
-	 * 
-	 * @return void
-	 */
-	public void listCourses() {
-		for (Course course : this.courses) {
-			if (course == null) {
-				break;
-			}
+  // Retrieve all
+  public void showCourses() {
+    if (this.courses.length == 0) {
+      System.out.println("Nenhum curso cadastrado.");
+    } else {
+      for (Course course : this.courses) {
+        if (course == null)
+          break;
+        System.out.println(course.getName() + " -- " + course.getDescription());
+      }
+    }
+  }
 
-			System.out.println(course.getTitle());
-		}
-	}
+  public boolean deleteCourse(String text) {
+    if (this.courses.length == 0) {
+      System.out.println("Não há cursos cadastrados.");
 
+      return false;
+    } else {
+      for (int i = 0; i < this.courses.length - 1; i++) {
+        if (this.courses[i].getName().indexOf(text) != -1 || this.courses[i].getDescription().indexOf(text) != -1) {
+          for (int j = i; j < this.courses.length - 1; j++) {
+            this.courses[j] = this.courses[j + 1];
+          }
+        }
+
+        this.courses[this.courses.length - 1] = null;
+      }
+
+      return true;
+    }
+  }
+
+  // CRUD -- Events
+
+  // Create
+  public void addEvent(Event event) {
+    final int LENGTH = this.events.length + 1;
+
+    this.events = Arrays.copyOf(this.events, LENGTH);
+    this.events[LENGTH - 1] = event;
+  }
+
+  // Update
+  public boolean updateEvent(String text, String newName, String newDescription, String newStartDate, String newEndDate,
+      String newAddress, String newPhone, String newEmail) {
+    if (this.events.length == 0) {
+      System.out.println("Não há eventos cadastrados.");
+
+      return false;
+    } else {
+      Event[] event = this.getEventsByText(text);
+      if (event.length == 0) {
+        System.out.println("Nenhum evento foi encontrado.");
+
+        return false;
+      } else {
+        if (newName != "")
+          event[0].setName(newName);
+
+        if (newDescription != "")
+          event[0].setDescription(newDescription);
+
+        if (newStartDate != "")
+          event[0].setStartDate(newStartDate);
+
+        if (newEndDate != "")
+          event[0].setEndDate(newEndDate);
+
+        if (newAddress != "")
+          event[0].setAddress(newAddress);
+
+        if (newPhone != "")
+          event[0].setPhone(newPhone);
+
+        if (newEmail != "")
+          event[0].setEmail(newEmail);
+      }
+
+      return true;
+    }
+  }
+
+  // Retrieve
+  public void showEvent(String text) {
+    if (this.events.length == 0) {
+      System.out.println("Não há eventos cadastrados.");
+    } else {
+      Event[] events = this.getEventsByText(text);
+
+      if (events.length == 0) {
+        System.out.println("Não há eventos cadastrados.");
+      } else {
+        for (Event event : events) {
+          System.out.println(event.getName() + " -- " + event.getDescription());
+        }
+      }
+    }
+  }
+
+  // Retrieve all
+  public void showEvents() {
+    if (this.events.length == 0) {
+      System.out.println("Não há eventos cadastrados");
+    } else {
+      for (Event event : this.events) {
+        if (event == null)
+          break;
+        System.out.println(event.getName() + " -- " + event.getDescription());
+      }
+    }
+  }
+
+  public boolean deleteEvent(String text) {
+    if (this.events.length == 0) {
+      System.out.println("Não há eventos cadastrados.");
+
+      return false;
+    } else {
+      for (int i = 0; i < this.events.length - 1; i++) {
+        if (this.events[i].getName().indexOf(text) != -1 || this.events[i].getDescription().indexOf(text) != -1) {
+          for (int j = i; j < this.events.length - 1; j++) {
+            this.events[j] = this.events[j + 1];
+          }
+
+          break;
+        }
+      }
+
+      this.events[this.events.length - 1] = null;
+      return true;
+    }
+  }
 }

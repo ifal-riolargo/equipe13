@@ -1,37 +1,95 @@
 package test;
 
-import app.information.Course;
 import app.company.Company;
-import app.person.Teacher;
+import app.towatch.Course;
+import app.towatch.Event;
 
 public class CompanyTest {
-	public static void main(String[] args) {
-		Course[] cursos = new Course[3];
-		String[] bibliography = { "uma doiasd", "oasdosaod", "asasod" };
+  public static void main(String[] args) {
+    Company kubbleware = new Company("KubbleWare");
 
-		Teacher[] professores = new Teacher[2];
-		String[] academicTraining = { "ufal asdsad", "ifal asdjsiad" };
-		professores[0] = new Teacher("joasfasf", "333", "2018-09-10",
-				"email@gmail.com", academicTraining);
-		professores[1] = new Teacher("asdojasodj", "22", "1231", "asdasd",
-				academicTraining);
+    Course[] courses = new Course[6];
+    courses[0] = new Course("Meu Curso é fera", "Esse curso deixará vc preparado pra td", "02-08-2020", "02-10-2020",
+        "vai ser online", "4002-8922", "myEmail@gmail.com");
 
-		cursos[0] = new Course("Titulo do curso de java", "conteudo desse curso",
-				"descricao", bibliography, 400, 'A', "fila/path", professores);
+    courses[1] = new Course("Curso de java javoso", "Esse curso de java e o melior que tem", "12-12-2020", "14-10-2022",
+        "vai ser online", "2112-4333", "myasdEmail@gmail.com");
 
-		cursos[1] = new Course("Titulo do curso de node", "conteudo node curso",
-				"descricao node", bibliography, 400, 'A', "fila/path", professores);
+    courses[2] = new Course("PHP ehhhh brabo", "So as braba", "30-12-2020", "30-12-2021", "agencia caixa", "4002-8922",
+        "myasdsadEmail@gmail.com");
 
-		Company kubbleware = new Company("Empresa", "123213", "address",
-				"123123123", 7, cursos, "somos isso isso e aquilo");
+    courses[3] = new Course("Pythoooon é fera", "Python e top mano slk deixará vc preparado pra td", "02-08-2020",
+        "02-10-2020", "vai ser online", "4002-8922", "myEmail@asdasdgmail.com");
 
-		// [C]RUD
-		// System.out.println(kubbleware.retrieveCourse(" ").getTitle());
-		kubbleware.updateCourse("Titulo do curso de java", "novo Titulo",
-				"novaDesc");
-		kubbleware.deleteCourse("novo Titulo");
+    courses[4] = new Course("Meuasdasd Curso é fera", "Esse curso deixará vc preparado pra td", "02-08-2020",
+        "02-10-2020", "vai ser online", "4002-8922", "myEmail@gmaiasdasdl.com");
 
-		kubbleware.listCourses();
+    courses[5] = new Course("Soh rojaum", "Venho lancando a braba", "02-08-2020", "02-10-2020", "vai ser online",
+        "4002-8922", "myEmail@gmail.com");
 
-	}
+    // ok
+    for (Course course : courses)
+      kubbleware.addCourse(course);
+
+    // ok
+    kubbleware.showCourses();
+    System.out.println("+====+");
+
+    // // ok
+    // kubbleware.showCourse("Esse");
+    // System.out.println("+====+");
+
+    // // ok
+    // kubbleware.deleteCourse("Soh Rojaum");
+    // kubbleware.showCourses();
+
+    // ok
+    kubbleware.updateCourse("Soh", "", "Lancastes a braba?", "", "", "", "", "");
+    kubbleware.showCourses();
+
+    // // ok
+    // Event[] events = new Event[6];
+    // events[0] = new Event("Meu Curso é fera", "Esse curso deixará vc preparado
+    // pra td", "02-08-2020", "02-10-2020",
+    // "vai ser online", "4002-8922", "myEmail@gmail.com");
+
+    // events[1] = new Event("Curso de java javoso", "Esse curso de java e o melior
+    // que tem", "12-12-2020", "14-10-2022",
+    // "vai ser online", "2112-4333", "myasdEmail@gmail.com");
+
+    // events[2] = new Event("PHP ehhhh brabo", "So as braba", "30-12-2020",
+    // "30-12-2021", "agencia caixa", "4002-8922",
+    // "myasdsadEmail@gmail.com");
+
+    // events[3] = new Event("Pythoooon é fera", "Python e top mano slk deixará vc
+    // preparado pra td", "02-08-2020",
+    // "02-10-2020", "vai ser online", "4002-8922", "myEmail@asdasdgmail.com");
+
+    // events[4] = new Event("Meuasdasd Curso é fera", "Esse curso deixará vc
+    // preparado pra td", "02-08-2020",
+    // "02-10-2020", "vai ser online", "4002-8922", "myEmail@gmaiasdasdl.com");
+
+    // events[5] = new Event("Soh rojaum", "Venho lancando a braba", "02-08-2020",
+    // "02-10-2020", "vai ser online",
+    // "4002-8922", "myEmail@gmail.com");
+
+    // // ok
+    // for (Event event : events)
+    // kubbleware.addEvent(event);
+
+    // // ok
+    // kubbleware.showEvents();
+    // System.out.println("---===---");
+
+    // // ok
+    // kubbleware.showEvent("Esse");
+
+    // // ok
+    // kubbleware.deleteEvent("PHP");
+
+    // // ok
+    // kubbleware.updateEvent("Esse", "nome agr e esse", "", "", "", "", "", "");
+    // kubbleware.showEvents();
+
+  }
 }

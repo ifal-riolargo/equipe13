@@ -1,9 +1,0 @@
-{
-  "files.exclude": {
-    "**/desktopApp/.classpath": true,
-    "**/desktopApp/.project": true,
-    "**/desktopApp/.settings": true,
-    "**/desktopApp/.factorypath": true
-  },
-  "java.format.settings.url": "desktopApp/eclipse-formater.xml"
-}
