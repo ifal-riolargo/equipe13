@@ -110,7 +110,9 @@ public class Company {
         System.out.println("Nenhum curso encontrado.");
       } else {
         for (Course course : courses) {
-          System.out.println(course.getName() + " -- " + course.getDescription());
+          course.showCourse();
+
+          System.out.println();
         }
       }
     }
@@ -122,9 +124,9 @@ public class Company {
       System.out.println("Nenhum curso cadastrado.");
     } else {
       for (Course course : this.courses) {
-        if (course == null)
-          break;
-        System.out.println(course.getName() + " -- " + course.getDescription());
+        course.showCourse();
+
+        System.out.println();
       }
     }
   }
@@ -140,11 +142,12 @@ public class Company {
           for (int j = i; j < this.courses.length - 1; j++) {
             this.courses[j] = this.courses[j + 1];
           }
-        }
 
-        this.courses[this.courses.length - 1] = null;
+          break;
+        }
       }
 
+      this.courses = Arrays.copyOf(this.courses, this.courses.length - 1);
       return true;
     }
   }
@@ -245,7 +248,7 @@ public class Company {
         }
       }
 
-      this.events[this.events.length - 1] = null;
+      this.events = Arrays.copyOf(this.events, this.events.length - 1);
       return true;
     }
   }

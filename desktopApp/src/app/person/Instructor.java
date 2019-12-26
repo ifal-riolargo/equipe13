@@ -16,4 +16,11 @@ public class Instructor extends Person {
   public void setFormation(String formation) {
     this.formation = formation;
   }
+
+  public void showInstructor() {
+    System.out.println("Nome: " + this.getName());
+    System.out.println("Data de nascimento: " + this.getBirth());
+    System.out.println("Email: " + this.getEmail());
+    System.out.println("Formação: " + this.getFormation());
+  }
 }

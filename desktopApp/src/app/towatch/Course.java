@@ -11,7 +11,7 @@ public class Course {
   private String address = "";
   private String phone = "";
   private String email = "";
-  private Instructor[] instructors;
+  private Instructor[] instructors = new Instructor[0];
 
   public Course(String name, String description, String startDate, String endDate, String address, String phone,
       String email) {
@@ -23,11 +23,10 @@ public class Course {
     this.address = address;
     this.phone = phone;
     this.email = email;
-    this.instructors = new Instructor[0];
   }
 
   public Course(String name, String description, String startDate, String endDate, String address, String phone,
-      String email, Instructor[] instructors) {
+      String email, Instructor instructor) {
 
     this.name = name;
     this.description = description;
@@ -36,7 +35,7 @@ public class Course {
     this.address = address;
     this.phone = phone;
     this.email = email;
-    this.instructors = instructors;
+    this.addInstructor(instructor);
   }
 
   public String getName() {
@@ -95,16 +94,6 @@ public class Course {
     this.email = email;
   }
 
-  // CRUD -- Instructor
-
-  // Create
-  public void addInstructor(Instructor instructor) {
-    final int NEW_LENGTH = this.instructors.length + 1;
-
-    this.instructors = Arrays.copyOf(this.instructors, NEW_LENGTH);
-    this.instructors[NEW_LENGTH - 1] = instructor;
-  }
-
   private Instructor getInstructorByIndex(int index) {
     if (index < 0 || index >= this.instructors.length) {
       return null;
@@ -127,6 +116,16 @@ public class Course {
     return instructors;
   }
 
+  // CRUD -- Instructor
+
+  // Create
+  public void addInstructor(Instructor instructor) {
+    final int NEW_LENGTH = this.instructors.length + 1;
+
+    this.instructors = Arrays.copyOf(this.instructors, NEW_LENGTH);
+    this.instructors[NEW_LENGTH - 1] = instructor;
+  }
+
   // Retrieve
   public void showInstructor(String name) {
     if (this.instructors.length == 0) {
@@ -136,8 +135,11 @@ public class Course {
       if (instructors.length == 0) {
         System.out.println("Não foi encontrado nenhum instrutor.");
       } else {
-        for (Instructor instructor : instructors)
-          System.out.println(instructor.getName() + " -=-=-" + instructor.getFormation());
+        for (Instructor instructor : instructors) {
+          instructor.showInstructor();
+
+          System.out.println();
+        }
       }
     }
   }
@@ -145,13 +147,15 @@ public class Course {
   // Retrieve
   public void showInstructor(int id) {
     if (this.instructors.length == 0) {
-      System.out.println("Não há instrutores cadastrados");
+      System.out.println("Não há instrutores cadastrados.");
     } else {
       Instructor instructor = this.getInstructorByIndex(id);
       if (instructor == null) {
         System.out.println("Id inválido");
       } else {
-        System.out.println(instructor.getName() + " -=-=-" + instructor.getFormation());
+        instructor.showInstructor();
+
+        System.out.println();
       }
     }
   }
@@ -159,25 +163,28 @@ public class Course {
   // Retrieve All
   public void showInstructors() {
     if (instructors.length == 0) {
-      System.out.println("Não há instrutores cadastrados");
+      System.out.println("Não há instrutores cadastrados.");
     } else {
       for (Instructor instructor : instructors) {
-        if (instructor == null)
-          break;
+        instructor.showInstructor();
 
-        System.out.println(instructor.getName() + " =-=-= " + instructor.getFormation());
+        System.out.println();
       }
     }
   }
 
   // Update
-  public void updateInstructor(String oldName, String newName, String newFormation) {
+  public boolean updateInstructor(String oldName, String newName, String newFormation) {
     if (this.instructors.length == 0) {
       System.out.println("Não há instrutores cadastrados.");
+
+      return false;
     } else {
       Instructor[] instructors = this.getInstructorByName(oldName);
       if (instructors.length == 0) {
         System.out.println("Nenhum instrutor encontrado.");
+
+        return false;
       } else {
         Instructor instructor = instructors[0];
 
@@ -186,57 +193,89 @@ public class Course {
 
         if (newFormation != "")
           instructor.setFormation(newFormation);
+
+        return true;
       }
     }
   }
 
   // Update
-  public void updateInstructor(int id, String newName, String newFormation) {
+  public boolean updateInstructor(int id, String newName, String newFormation) {
     if (this.instructors.length == 0) {
       System.out.println("Não há instrutores cadastrados.");
+
+      return false;
     } else {
       Instructor instructor = this.getInstructorByIndex(--id);
       if (instructor == null) {
         System.out.println("Nenhum instrutor encontrado.");
+
+        return false;
       } else {
         if (newName != "")
           instructor.setName(newName);
 
         if (newFormation != "")
           instructor.setFormation(newFormation);
+
+        return true;
       }
     }
   }
 
   // Delete
-  public void deleteInstructor(String name) {
+  public boolean deleteInstructor(String name) {
     if (this.instructors.length == 0) {
       System.out.println("Não há instrutores cadastrados.");
+
+      return false;
     } else {
       for (int i = 0; i < this.instructors.length; i++) {
         if (this.instructors[i].getName().indexOf(name) != -1) {
           for (int j = i; j < this.instructors.length - 1; j++) {
             this.instructors[j] = this.instructors[j + 1];
           }
+
+          break;
         }
       }
-      this.instructors[this.instructors.length - 1] = null;
+
+      this.instructors = Arrays.copyOf(this.instructors, this.instructors.length - 1);
+      return true;
     }
   }
 
-  public void deleteInstructor(int id) {
+  public boolean deleteInstructor(int id) {
     if (this.instructors.length == 0) {
       System.out.println("Não há instrutores cadastrados.");
+
+      return false;
     } else {
       if (--id < 0 || id >= this.instructors.length) {
         System.out.println("Id inválido");
+        System.out.println(id + " " + this.instructors.length);
+
+        return false;
       } else {
         for (int j = id; j < this.instructors.length - 1; j++) {
           this.instructors[j] = this.instructors[j + 1];
         }
-        this.instructors[this.instructors.length - 1] = null;
+
+        this.instructors = Arrays.copyOf(this.instructors, this.instructors.length - 1);
       }
+      return true;
     }
   }
 
+  public void showCourse() {
+    System.out.println("Curso: " + this.getName());
+    System.out.println("Descrição: " + this.getDescription());
+    System.out.println("Começa em: " + this.getStartDate());
+    System.out.println("Termina em: " + this.getEndDate());
+    System.out.println("Endereço: " + this.getAddress());
+    System.out.println("Telefone: " + this.getPhone());
+    System.out.println("Email: " + this.getEmail());
+    System.out.println("Instrutores: ");
+    this.showInstructors();
+  }
 }

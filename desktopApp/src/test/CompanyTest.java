@@ -44,8 +44,9 @@ public class CompanyTest {
     // kubbleware.showCourses();
 
     // ok
-    kubbleware.updateCourse("Soh", "", "Lancastes a braba?", "", "", "", "", "");
-    kubbleware.showCourses();
+    // kubbleware.updateCourse("Soh", "", "Lancastes a braba?", "", "", "", "", "");
+    // kubbleware.deleteCourse("braba");
+    // kubbleware.showCourses();
 
     // // ok
     // Event[] events = new Event[6];

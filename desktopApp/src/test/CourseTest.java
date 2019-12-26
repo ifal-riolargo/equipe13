@@ -31,12 +31,17 @@ public class CourseTest {
 
     // myCourse.updateInstructor("Jo", "novoNomeDoRapaiz", "oxe tu eh isso eh");
     // myCourse.updateInstructor("Jo", "novoNomeDoCara");
-    myCourse.updateInstructor(5, "josephhhhhh", "oxe joasdad");
+    // myCourse.updateInstructor(5, "josephhhhhh", "oxe joasdad");
     // myCourse.showInstructors();
 
     // ok
-    myCourse.deleteInstructor("Josafá Veríssimo");
-    myCourse.deleteInstructor(5);
+    // myCourse.showInstructors();
+    System.out.println("=======");
+    // myCourse.deleteInstructor("Josafá Veríssimo");
+    // myCourse.addInstructor(instructors[0]);
+    myCourse.updateInstructor("Cara", "josa", "formadooo");
+    myCourse.deleteInstructor("josa");
+    myCourse.showCourse();
 
   }
 }
