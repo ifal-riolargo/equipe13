@@ -30,9 +30,14 @@ h1 {
 html{
     scroll-behavior: smooth;
 }
+
 .card{
     background-color: #dfdfdf;
     border: 1px solid #555;
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .card-free {
